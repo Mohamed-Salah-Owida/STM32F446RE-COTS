@@ -3,27 +3,14 @@
 
 /**
  * @file GPIO_Interface.h
- * @auther Mohamed Salah Owida
+ * @author Mohamed Salah Owida
  * @brief Public interface for GPIO driver (STM32F446xx)
  *
  * This file contains type definitions, enums, structures,
  * and function prototypes for GPIO configuration and control.
  */
 
-/*=============================
-    Error State Definitions
- ==============================*/
-/**
- * @enum GPIOErrorStates_t
- * @brief Error codes returned by GPIO functions
- */
-typedef enum
-{
-	GPIO_OK = 0,            /*  Operation successful */
-	GPIO_InvalidPortName,   /*  Invalid port selected (not A–H) */
-	GPIO_InvalidPinNum,     /*  Invalid pin number (not 0–15) */
-	GPIO_NullPtr            /*  Null pointer passed to function */
-}GPIOErrorStates_t;
+
 
 /*=============================
     Port Definitions
