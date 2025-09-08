@@ -1,0 +1,141 @@
+#ifndef RCC_PRV_H_
+#define RCC_PRV_H_
+
+
+
+/***********************************
+ * 	Enums for the Registers bits
+ * **********************************/
+
+/*CR Register*/
+typedef enum
+{
+	HSI_ON,
+	HSI_RDY,
+	HSI_TRIM0 = 3,
+	HSI_TRIM1,
+	HSI_TRIM2,
+	HSI_TRIM3,
+	HSI_TRIM4,
+	HSI_CAL0,
+	HSI_CAL1,
+	HSI_CAL2,
+	HSI_CAL3,
+	HSI_CAL4,
+	HSI_CAL5,
+	HSI_CAL6,
+	HSI_CAL7,
+	HSE_ON,
+	HSE_RDY,
+	HSE_BYP,
+	CSS_ON,
+	PLL_ON = 24,
+	PLL_RDY,
+	PLLI2S_ON,
+	PLLI2S_RDY,
+	PLLSAI_ON,
+	PLLSAI_RDY,
+
+}CR_REG_t;
+
+
+
+
+
+typedef enum
+{
+	SW0,
+	SW1,
+	SWS0,
+	SWS1,
+	HPRE0,
+	HPRE1,
+	HPRE2,
+	HPRE3,
+	PPRE1_0 = 10,
+	PPRE1_1,
+	PPRE1_2,
+	PPRE2_0,
+	PPRE2_1,
+	PPRE2_2,
+	RTCPRE0,
+	RTCPRE1,
+	RTCPRE2,
+	RTCPRE3,
+	RTCPRE4,
+	MCO1_0,
+	MCO1_1,
+	MCO1_PRE0 = 24,
+	MCO1_PRE1,
+	MCO1_PRE2,
+	MCO2_PRE0,
+	MCO2_PRE1,
+	MCO2_PRE2,
+	MCO2_0,
+	MCO2_1,
+
+}CFGR_REG_t;
+
+
+
+typedef enum
+{
+	PLLM0,
+	PLLM1,
+	PLLM2,
+	PLLM3,
+	PLLM4,
+	PLLM5,
+	PLLN0,
+	PLLN1,
+	PLLN2,
+	PLLN3,
+	PLLN4,
+	PLLN5,
+	PLLN6,
+	PLLN7,
+	PLLN8,
+	PLLP0 = 16,
+	PLLP1,
+	PLLSRC = 22,
+	PLLQ0 = 24,
+	PLLQ1,
+	PLLQ2,
+	PLLQ3,
+	PLLR0,
+	PLLR1,
+	PLLR2,
+
+}PLLCFGR_REG_t;
+
+
+
+
+
+#define TIME_OUT	50000u
+
+
+
+#define CFGR_SW_BITS_MASK	0b11
+#define CFGR_SWS_BITS_MASK	0b1100
+
+
+
+#define CFGR_PLL_M_BITS_MASK	0b111111
+#define CFGR_PLL_N_BITS_MASK    0b111111111
+#define CFGR_PLL_P_BITS_MASK    0b11
+#define CFGR_PLL_Q_BITS_MASK    0b1111
+#define CFGR_PLL_R_BITS_MASK    0b111
+
+
+#define TWO_BITS_SHIFTING_MASK  2u
+
+
+
+
+
+
+
+
+
+#endif /* RCC_PRV_H_ */
