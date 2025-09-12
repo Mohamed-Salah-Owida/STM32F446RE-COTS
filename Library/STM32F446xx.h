@@ -9,6 +9,12 @@
 #define ROM_BASE_ADDRESS		0x1FFF0000U
 
 
+/**************************************core peripheral base addresses *************************/
+
+#define SYSTIC_BASE_ADDRESS     0xE000E010U
+
+
+
 
 /******************* AHB1 Peripheral Base Addresses *******************/
 #define GPIOA_BASE_ADDRESS		0x40020000U			
@@ -33,7 +39,16 @@
 
 
 
+/*******************SYSTIC Registers Definition Structures *******************/
 
+typedef struct
+{
+	volatile uint32_t CSR;
+	volatile uint32_t RVR;
+	volatile uint32_t CVR;
+	volatile uint32_t CALIB;
+
+}Systic_regdef_t;
 
 
 /******************* RCC Registers Definition Structures *******************/
@@ -109,11 +124,9 @@ typedef struct
 
 
 
+/******************* SYSTIC Peripheral Definition *******************/
 
-#define RCC_BASE_ADDRESS		0x40023800U
-
-
-
+#define Systic     ((Systic_regdef_t *) SYSTIC_BASE_ADDRESS )
 
 
 
