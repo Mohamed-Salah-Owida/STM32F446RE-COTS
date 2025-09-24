@@ -4,7 +4,7 @@
 #include "ErrType.h"
 
 #include "SCB_Interface.h"
-
+#include "SCB_Prv.h"
 
 uint8_t SCB_SetPriorityGroup(uint32_t PriorityGroup)
 {
