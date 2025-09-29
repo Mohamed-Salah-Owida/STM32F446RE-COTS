@@ -16,6 +16,9 @@
 #define SCB_BASE_ADDRESS        0xE000E008UL
 
 
+/**************************************vendor-specific peripherals base addresses *************************/
+#define EXTI_BASE_ADDRESS       0x40013C00UL
+#define SYSCFG_BASE_ADDRESS     0x40013800ul
 
 
 /******************* AHB1 Peripheral Base Addresses *******************/
@@ -160,6 +163,32 @@ typedef struct
 }GPIO_RegDef_t;
 
 
+
+/******************* EXTI Registers Definition Structures *******************/
+typedef struct
+{
+	volatile uint32_t IMR ;
+	volatile uint32_t EMR ;
+	volatile uint32_t RTSR ;
+	volatile uint32_t FTSR ;
+	volatile uint32_t SWIER ;
+	volatile uint32_t PR ;
+
+}EXTI_regDef_t;
+
+
+typedef struct
+{
+    volatile uint32_t MEMRMP;     /*!< SYSCFG memory remap register,        Address offset: 0x00 */
+    volatile uint32_t PMC;        /*!< SYSCFG peripheral mode config,       Address offset: 0x04 */
+    volatile uint32_t EXTICR[4];  /*!< SYSCFG external interrupt config,    Address offset: 0x08-0x14 */
+    uint32_t RESERVED[2];         /*!< Reserved,                            Address offset: 0x18-0x1C */
+    volatile uint32_t CMPCR;      /*!< Compensation cell control register,  Address offset: 0x20 */
+    uint32_t RESERVED1[2];        /*!< Reserved,                            Address offset: 0x24-0x28 */
+    volatile uint32_t CFGR;       /*!< SYSCFG configuration register,       Address offset: 0x2C */
+} SYSCFG_RegDef_t;
+
+
 /******************* RCC Peripheral Definition *******************/
 #define RCC		((RCC_RegDef_t *) RCC_BASE_ADDRESS)
 
@@ -177,13 +206,25 @@ typedef struct
 
 
 /******************* SYSTIC Peripheral Definition *******************/
+#define Systic     ((Systic_regdef_t*) SYSTIC_BASE_ADDRESS)
 
-#define Systic     ((Systic_regdef_t *) SYSTIC_BASE_ADDRESS)
 
 /******************* NVIC Peripheral Definition *******************/
-#define NVIC       (( NVIC_Regdef_t *) NVIC_BASE_ADDRESS)
+#define NVIC       (( NVIC_Regdef_t*) NVIC_BASE_ADDRESS)
 
-#define SCB        ((SCB_Regdef_t * )  SCB_BASE_ADDRESS )
+
+/******************* SCB Peripheral Definition *******************/
+#define SCB        ((SCB_Regdef_t*)  SCB_BASE_ADDRESS )
+
+/******************* EXTI Peripheral Definition *******************/
+#define EXTI        ((EXTI_regDef_t*)  EXTI_BASE_ADDRESS)
+
+/******************* SYSCFG Peripheral Definition *******************/
+
+#define SYSCFG                ((SYSCFG_RegDef_t *) SYSCFG_BASE_ADDRESS)
+
+
+
 
 
 #endif

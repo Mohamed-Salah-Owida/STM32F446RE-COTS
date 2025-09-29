@@ -2,6 +2,7 @@
 #define ERRTYPE_H_
 
 
+#define NULL                             0U
 #define OK         			             1u
 #define NOK         		             2u
 #define NULL_PTR   			             3u
@@ -26,6 +27,10 @@
 #define NVIC_Invalid_Priority            16U
 
 #define SCB_WRONG_PRI_GROUP_OPTION       17U
+
+#define EXTI_WRONG_OPTION                18U
+#define SYSCFG_WRONG_OPTION              19U
+
 
 
 #endif /* ERRTYPE_H_ */
